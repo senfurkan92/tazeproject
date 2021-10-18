@@ -1,0 +1,26 @@
+﻿<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="~/img/unnamed.jpg" alt="" width="90" height="30" class="img-thumbnail">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link @(Context.Request.Path.ToUriComponent() == "/" ? "active text-primary" : "text-secondary")" aria-current="page" href="/"><b>Ana Sayfa</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(Context.Request.Path.ToUriComponent() == "/Category" ? "active text-primary" : "text-secondary")" href="/Category"><b>Kategori</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(Context.Request.Path.ToUriComponent() == "/Article" ? "active text-primary" : "text-secondary")" href="/Article"><b>Yazılar</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(Context.Request.Path.ToUriComponent() == "/Article/Add" ? "active text-primary" : "text-secondary")" href="/Article/Add"><b>Yeni Yazı</b></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

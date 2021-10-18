@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div id="vm" v-cloak>
+    <div class="container">
+        <h2 class="text-center text-dark text-capitalize w-100">
+            Kategori Yönetimi
+        </h2>
+        <div class="row">
+            <div class="col-lg-8 col-md-10 col-sm-12 col-12 offset-lg-2 offset-md-1 py-2">        
+                <div class="d-flex justify-content-end">
+                    <div class="p-2 bd-highlight">
+                        <input class="form-control" placeholder="Yeni Kategori" v-model="newCategory"/>
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        <button class="btn btn-success" v-on:click="insertCategory()">
+                            Kaydet
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-10 col-sm-12 col-12 offset-lg-2 offset-md-1 py-2">
+                <table class="table table-hover rounded-3">
+                    <thead class="bg-success text-light">
+                        <tr>
+                            <th class="col-3 text-center">#</th>
+                            <th class="col-3">Kategori</th>
+                            <th class="col-3">Eklenme Tarihi</th>
+                            <th class="col-3 text-center">İşlem</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="category, index in categories" v-bind:key="index">
+                            <td class="text-center">
+                                {{index+1}}
+                            </td>
+                            <td>
+                                {{category.Name}}
+                            </td>
+                            <td>
+                                {{category.InsertDate.split('T')[0]}}
+                            </td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-danger" v-on:click="deleteCategory(category.Id, index)">
+                                    Sil
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const vm = Vue.createApp({
+        data() {
+            return {
+                newCategory: "",
+                categories: [],
+            }
+        },
+        created() {
+            this.getAll();
+        },
+        methods: {
+            insertCategory() {
+                axios.post("/Service/CategoryApi/Insert", { categoryName: this.newCategory })
+                    .then(resp => {
+                        if (resp.data.Success) {
+                            this.categories.push(resp.data.Data)
+                            Swal.fire(
+                                'Yeni Kategori',
+                                'Yeni kategori başarıyla eklendi',
+                                'success'
+                            )
+                        } else {
+                            Swal.fire(
+                                'Yeni Kategori',
+                                'Yeni kategori ekleme sırasında hata olustu',
+                                'error'
+                            )
+                        }
+                    })
+                    .catch(err => {
+                        Swal.fire(
+                            'Yeni Kategori',
+                            'Yeni kategori ekleme sırasında hata olustu',
+                            'error'
+                        )
+                    })
+                    .finally(_ => {
+
+                    })
+            },
+            deleteCategory(id, index) {
+                axios.get(`/Service/CategoryApi/Delete/${id}`)
+                    .then(resp => {
+                        if (resp.data.Success) {
+                            this.categories.splice(index, 1);
+                            Swal.fire(
+                                'Kategori Silme',
+                                'Kategori başarıyla silindi',
+                                'success'
+                            )
+                        } else {
+                            Swal.fire(
+                                'Kategori Silme',
+                                'Kategori silme sırasında hata olustu',
+                                'error'
+                            )
+                        }
+                    })
+                    .catch(err => {
+                        Swal.fire(
+                            'Kategori Silme',
+                            'Kategori silme sırasında hata olustu',
+                            'error'
+                        )
+                    })
+                    .finally(_ => {
+
+                    })
+            },
+            getAll() {
+                axios.get("/Service/CategoryApi/GetAll")
+                    .then(resp => {
+                        if (resp.data.Success) {
+                            console.log(resp.data.Data);
+                            this.categories = resp.data.Data;
+                        } else {
+                            Swal.fire(
+                                'Kategorileri Getirme',
+                                'Kategorileri getirme sırasında hata olustu',
+                                'error'
+                            )
+                        }
+                    })
+                    .catch(err => {
+                        Swal.fire(
+                            'Kategorileri Getirme',
+                            'Kategorileri getirme sırasında hata olustu',
+                            'error'
+                        )
+                    })
+                    .finally(_ => {
+
+                    })
+            }
+        }
+    }).mount('#vm');
+</script>

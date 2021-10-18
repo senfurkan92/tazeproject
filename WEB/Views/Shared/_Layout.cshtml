@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="icon" href="/img/unnamed.ico">
+    <link href="~/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/main.css" rel="stylesheet" />
+    <script src="~/twitter-bootstrap/js/bootstrap.js"></script>
+    <script src="~/jquery/jquery.js"></script>
+    <script src="~/jquery-validate/jquery.validate.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="~/js/vue.js"></script>
+    <script src="~/axios/axios.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@ckeditor/ckeditor5-build-classic@30.0.0/build/ckeditor.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@ckeditor/ckeditor5-vue@2.0.1/dist/ckeditor.min.js"></script>
+</head>
+<body>
+    <partial name="~/Views/Partials/NavbarPartial.cshtml"/>
+    <div class="py-4">
+        @RenderBody()
+    </div>
+</body>
+</html>

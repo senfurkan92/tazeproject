@@ -1,0 +1,15 @@
+D:\dotnet\TazeProject\Domain\bin\Debug\net5.0\Domain.deps.json
+D:\dotnet\TazeProject\Domain\bin\Debug\net5.0\Domain.dll
+D:\dotnet\TazeProject\Domain\bin\Debug\net5.0\ref\Domain.dll
+D:\dotnet\TazeProject\Domain\bin\Debug\net5.0\Domain.pdb
+D:\dotnet\TazeProject\Domain\bin\Debug\net5.0\CORE.dll
+D:\dotnet\TazeProject\Domain\bin\Debug\net5.0\CORE.pdb
+D:\dotnet\TazeProject\Domain\obj\Debug\net5.0\Domain.csproj.AssemblyReference.cache
+D:\dotnet\TazeProject\Domain\obj\Debug\net5.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\dotnet\TazeProject\Domain\obj\Debug\net5.0\Domain.AssemblyInfoInputs.cache
+D:\dotnet\TazeProject\Domain\obj\Debug\net5.0\Domain.AssemblyInfo.cs
+D:\dotnet\TazeProject\Domain\obj\Debug\net5.0\Domain.csproj.CoreCompileInputs.cache
+D:\dotnet\TazeProject\Domain\obj\Debug\net5.0\Domain.dll
+D:\dotnet\TazeProject\Domain\obj\Debug\net5.0\ref\Domain.dll
+D:\dotnet\TazeProject\Domain\obj\Debug\net5.0\Domain.pdb
+D:\dotnet\TazeProject\Domain\obj\Debug\net5.0\DOMAIN.csproj.CopyComplete

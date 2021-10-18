@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewData["Title"] = "Add";
+}
+
+
+<div id="vm">
+    <div class="container">
+        <h2 class="text-center text-dark text-capitalize w-100">
+            Yeni Yazı Ekle
+        </h2>
+        <div class="row">
+            <div class="col-lg-8 col-md-10 col-sm-12 col-12 offset-lg-2 offset-md-1 py-2">
+                <form>
+                    <div class="p-3">
+                        <label><b>Kategori :</b></label>
+                        <select class="form-control" v-model="article.categoryId">
+                            <option v-for="category in categories" v-bind:key="category.Id" v-bind:value="category.Id">
+                                {{category.Name}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="p-3">
+                        <label><b>Başlık :</b></label>
+                        <input class="form-control" type="text" v-model="article.caption"/>
+                    </div>
+                    <div class="p-3">
+                        <label><b>Özet Bilgi :</b></label>
+                        <input class="form-control" type="text" v-model="article.description"/>
+                    </div>
+                    <div class="p-3">
+                        <label><b>İçerik :</b></label>
+                        <ckeditor :editor="editor" v-model="article.content" :config="editorConfig"></ckeditor>
+                    </div>
+                    <div class="p-3">
+                        <label><b>Yazı Posteri :</b></label>
+                        <input id="posterInput" class="form-control" type="file" v-on:change="upload($event)"/>
+                        <div class="w-100 text-center p-3">
+                            <img id="posterImg" class="img-fluid img-thumbnail" />
+                        </div>                
+                    </div>
+                    <div class="p-3 text-end">
+                        <button class="btn btn-outline-success" style="min-width:200px">
+                            Kaydet
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script> 
+    const vm = Vue.createApp({
+        data() {
+            return {
+                editor: ClassicEditor,
+                editorData: '',
+                editorConfig: {
+                    // The configuration of the editor.
+                },
+                categories: [],
+                article: {
+                    categoryId: '',
+                    caption: '',
+                    description: '',
+                    content: '',
+                    imgFile: null
+                }
+            }
+        },
+        watch: {
+            "article.imgFile"() {
+                console.log(this.article);
+            }
+        },
+        created() {
+            this.getCategories();
+        },
+        methods: {
+            getCategories() {
+                axios.get("/Service/CategoryApi/GetAll")
+                    .then(resp => {
+                        if (resp.data.Success) {
+                            this.categories = resp.data.Data;
+                        } else {
+                            Swal.fire(
+                                'Kategorileri Getirme',
+                                'Kategorileri getirme sırasında hata olustu',
+                                'error'
+                            )
+                        }
+                    })
+                    .catch(err => {
+                        Swal.fire(
+                            'Kategorileri Getirme',
+                            'Kategorileri getirme sırasında hata olustu',
+                            'error'
+                        )
+                    })
+                    .finally(_ => {
+
+                    })
+            },
+            upload(e) {
+                var url = URL.createObjectURL(e.target.files[0]);
+                document.querySelector("#posterImg").setAttribute("src", url);
+                this.article.imgFile = e.target.files[0];
+            }
+        }
+    }).use(CKEditor).mount('#vm');
+</script>

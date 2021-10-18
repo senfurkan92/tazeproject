@@ -1,0 +1,12 @@
+C:\Users\senfu\Desktop\Furkan\vitalenProjects\dotnet\VitalenOriginal\CORE\bin\Release\net5.0\CORE.deps.json
+C:\Users\senfu\Desktop\Furkan\vitalenProjects\dotnet\VitalenOriginal\CORE\bin\Release\net5.0\CORE.dll
+C:\Users\senfu\Desktop\Furkan\vitalenProjects\dotnet\VitalenOriginal\CORE\bin\Release\net5.0\ref\CORE.dll
+C:\Users\senfu\Desktop\Furkan\vitalenProjects\dotnet\VitalenOriginal\CORE\bin\Release\net5.0\CORE.pdb
+C:\Users\senfu\Desktop\Furkan\vitalenProjects\dotnet\VitalenOriginal\CORE\obj\Release\net5.0\CORE.csprojAssemblyReference.cache
+C:\Users\senfu\Desktop\Furkan\vitalenProjects\dotnet\VitalenOriginal\CORE\obj\Release\net5.0\CORE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\senfu\Desktop\Furkan\vitalenProjects\dotnet\VitalenOriginal\CORE\obj\Release\net5.0\CORE.AssemblyInfoInputs.cache
+C:\Users\senfu\Desktop\Furkan\vitalenProjects\dotnet\VitalenOriginal\CORE\obj\Release\net5.0\CORE.AssemblyInfo.cs
+C:\Users\senfu\Desktop\Furkan\vitalenProjects\dotnet\VitalenOriginal\CORE\obj\Release\net5.0\CORE.csproj.CoreCompileInputs.cache
+C:\Users\senfu\Desktop\Furkan\vitalenProjects\dotnet\VitalenOriginal\CORE\obj\Release\net5.0\CORE.dll
+C:\Users\senfu\Desktop\Furkan\vitalenProjects\dotnet\VitalenOriginal\CORE\obj\Release\net5.0\ref\CORE.dll
+C:\Users\senfu\Desktop\Furkan\vitalenProjects\dotnet\VitalenOriginal\CORE\obj\Release\net5.0\CORE.pdb
