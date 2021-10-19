@@ -10,13 +10,81 @@
             Yazılar
         </h2>
         <div class="row">
-
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 p-3" v-for="article,index in articles" v-bind:key="index">
+                <div class="card h-100">
+                    <img v-bind:src="article.ImgPath" class="card-img-top" height="300" width="300" alt="article image">
+                    <div class="card-body pb-5">
+                        <div class="d-block text-end">
+                            <span class="badge bg-secondary">{{article.CategoryName}}</span>
+                        </div>
+                        <h5 class="card-title">{{article.Caption}}</h5>
+                        <p class="card-text">{{article.Description}}</p>
+                        <a v-bind:href="`/Article/Read?id=${article.Id}`" class="btn btn-primary" style="position:absolute; bottom:5px; right:90px; width:75px">
+                            Oku
+                        </a>
+                        <button class="btn btn-danger" v-on:click="deleteArticle(article.Id, index)" style="position:absolute; bottom:5px; right:5px; width:75px">
+                            Sil
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <script>
     const vm = Vue.createApp({
+        data() {
+            return {
+                articles: [],
+            }
+        },
+        created() {
+            this.getAll();
+        },
+        methods: {
+            getAll() {
+                axios.get("/Service/ArticleApi/GetAll")
+                    .then(resp => {
+                        this.articles = resp.data.Data;
+                    })
+                    .catch(err => {
+                        Swal.fire(
+                            'Yazıları Getirme',
+                            'Yazıları getirme sırasında hata olustu',
+                            'error'
+                        )
+                    })
+            },
+            deleteArticle(id, index) {
+                axios.get(`/Service/ArticleApi/Delete/${id}`)
+                    .then(resp => {
+                        if (resp.data.Success) {
+                            this.articles.splice(index, 1);
+                            Swal.fire(
+                                'Yazı Silme',
+                                'Yazı başarıyla silindi',
+                                'success'
+                            )
+                        } else {
+                            Swal.fire(
+                                'Yazı Silme',
+                                'Yazı silme sırasında hata olustu',
+                                'error'
+                            )
+                        }
+                    })
+                    .catch(err => {
+                        Swal.fire(
+                            'Yazı Silme',
+                            'Yazı silme sırasında hata olustu',
+                            'error'
+                        )
+                    })
+                    .finally(_ => {
 
+                    })
+            },
+        }
     }).mount('#vm');
 </script>

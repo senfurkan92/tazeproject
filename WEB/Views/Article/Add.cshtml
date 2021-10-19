@@ -40,7 +40,7 @@
                         </div>                
                     </div>
                     <div class="p-3 text-end">
-                        <button class="btn btn-outline-success" style="min-width:200px">
+                        <button type="button" class="btn btn-outline-success" style="min-width:200px" v-on:click="save">
                             Kaydet
                         </button>
                     </div>
@@ -101,6 +101,44 @@
                         )
                     })
                     .finally(_ => {
+
+                    })
+            },
+            save() {
+                let formData = new FormData();
+                formData.append("categoryId", this.article.categoryId);
+                formData.append("caption", this.article.caption);
+                formData.append("description", this.article.description);
+                formData.append("content", this.article.content);
+                formData.append("imgFile", this.article.imgFile);
+                axios.post("/Service/ArticleApi/Insert", formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                    .then(resp => {
+                        if (resp.data.Success) {
+                            Swal.fire(
+                                'Yazı Ekleme',
+                                'Yeni yazı başarılı şekilde eklendi',
+                                'success'
+                            )
+                        } else {
+                            Swal.fire(
+                                'Yazı Ekleme',
+                                'Yeni yazı ekleme sırasında hata oluştu',
+                                'error'
+                            )
+                        }                     
+                    })
+                    .catch(err => {
+                        Swal.fire(
+                            'Yazı Ekleme',
+                            'Yeni yazı ekleme sırasında hata oluştu',
+                            'error'
+                        )
+                    }).
+                    finally(_ => {
 
                     })
             },

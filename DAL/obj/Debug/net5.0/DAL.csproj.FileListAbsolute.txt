@@ -17,4 +17,3 @@ D:\dotnet\TazeProject\DAL\obj\Debug\net5.0\DAL.dll
 D:\dotnet\TazeProject\DAL\obj\Debug\net5.0\ref\DAL.dll
 D:\dotnet\TazeProject\DAL\obj\Debug\net5.0\DAL.pdb
 D:\dotnet\TazeProject\DAL\obj\Debug\net5.0\DAL.genruntimeconfig.cache
-D:\dotnet\TazeProject\DAL\obj\Debug\net5.0\DAL.csproj.CopyComplete

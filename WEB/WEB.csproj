@@ -2,16 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <Nullable>warnings</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="Areas\Service\Data\" />
     <Folder Include="Areas\Service\Models\" />
     <Folder Include="Areas\Service\Views\" />
-    <Folder Include="Models\" />
     <Folder Include="wwwroot\exe\" />
     <Folder Include="wwwroot\chrome\" />
     <Folder Include="wwwroot\img\" />
+    <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 
   <ItemGroup>

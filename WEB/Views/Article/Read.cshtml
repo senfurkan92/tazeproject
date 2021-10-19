@@ -1,0 +1,36 @@
+﻿@model Article
+
+@{
+    ViewData["Title"] = "Read";
+}
+
+
+<div class="container">
+    <h2 class="text-center text-dark text-capitalize w-100">
+        Yazılar
+    </h2>
+    <div class="row">
+        <div class="col-lg-6 col-md-8 col-sm-12 col-12 offset-lg-3 col-md-2">
+            <div class="card h-100">
+                <div class="p-4 text-center w-100">
+                    <img src="@Model.ImgPath" class="img-fluid img-thumbnail" style="height:300px" alt="article image">
+                </div>
+                <div class="card-body pb-5">
+                    <h3 class="card-title text-center text-uppercase mb-3"><b>@Model.Caption</b></h3>
+                    <p class="card-text"><u>@Model.Description</u></p>
+                    <hr />
+                    <div>
+                        @Html.Raw(Model.Content)
+                    </div>
+                    <div class="d-block text-end">
+                        <a class="btn btn-secondary" href="/Article/Index">
+                            Geri
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

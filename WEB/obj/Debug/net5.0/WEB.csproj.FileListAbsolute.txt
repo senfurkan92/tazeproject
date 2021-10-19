@@ -523,7 +523,6 @@ D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Connec
 D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Connections.dll
 D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.dll
 D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Extensions.dll
-D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Http.Features.dll
 D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\Microsoft.AspNetCore.HttpOverrides.dll
 D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\Microsoft.AspNetCore.HttpsPolicy.dll
 D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\Microsoft.AspNetCore.Identity.dll
@@ -604,7 +603,6 @@ D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\Microsoft.Extensions.ObjectPool.
 D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.DataAnnotations.dll
 D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\Microsoft.Extensions.Options.dll
-D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\Microsoft.Extensions.Primitives.dll
 D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\Microsoft.Extensions.WebEncoders.dll
 D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\Microsoft.JSInterop.dll
 D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\Microsoft.Net.Http.Headers.dll
@@ -662,7 +660,6 @@ D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\System.IO.FileSystem.Primitives.
 D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\System.IO.FileSystem.Watcher.dll
 D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\System.IO.IsolatedStorage.dll
 D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\System.IO.MemoryMappedFiles.dll
-D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\System.IO.Pipelines.dll
 D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\System.IO.Pipes.dll
 D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\System.IO.UnmanagedMemoryStream.dll
 D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\refs\System.Linq.dll
@@ -925,3 +922,7 @@ D:\dotnet\TazeProject\WEB\obj\Debug\net5.0\WEB.genruntimeconfig.cache
 D:\dotnet\TazeProject\WEB\obj\Debug\net5.0\Razor\Views\Category\Index.cshtml.g.cs
 D:\dotnet\TazeProject\WEB\obj\Debug\net5.0\Razor\Views\Article\Index.cshtml.g.cs
 D:\dotnet\TazeProject\WEB\obj\Debug\net5.0\Razor\Views\Article\Add.cshtml.g.cs
+D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
+D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+D:\dotnet\TazeProject\WEB\bin\Debug\net5.0\System.IO.Pipelines.dll
+D:\dotnet\TazeProject\WEB\obj\Debug\net5.0\Razor\Views\Article\Read.cshtml.g.cs

@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WEB.Models.Profiles;
 
 namespace WEB.Extentions
 {
@@ -79,7 +80,7 @@ namespace WEB.Extentions
         {
             services.AddAutoMapper(config =>
             {
-                
+                config.AddProfile(new ArticleProfile());
             });
         }
 

@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "sUj9AMCjIJ6tO9tGmGUI45WujWoICIXNiziu6SC/ua/I89A7Hp6Pq9vKF2XMNgcG3dnucYOu2fs88CJg+nM+zg==",
+  "dgSpecHash": "fCatIuH4T9ga4Mq0BnkpTwh1ya/JHewaYBabnnngCT8u0p47mXOrNi2WpeHDG576BYUwrbu4VtvAsYAVFthCpA==",
   "success": true,
   "projectFilePath": "D:\\dotnet\\TazeProject\\DTO\\DTO.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\furka\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.11\\microsoft.aspnetcore.http.features.5.0.11.nupkg.sha512",
+    "C:\\Users\\furka\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\furka\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

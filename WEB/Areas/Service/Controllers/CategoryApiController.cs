@@ -1,6 +1,8 @@
-﻿using BLL.Data.Service;
+﻿using AutoMapper;
+using BLL.Data.Service;
 using Domain;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -17,7 +19,8 @@ namespace WEB.Areas.Service.Controllers
     [Route("Service/[controller]/[action]")]
     public class CategoryApiController : BaseApiController
     {
-        public CategoryApiController(IService_Category categoryManager, UserManager<AppUser> userManager) : base (categoryManager, userManager)
+        public CategoryApiController(IService_Category categoryManager, IService_Article articleManager, UserManager<AppUser> userManager, IWebHostEnvironment env, IMapper mapper) 
+            : base (categoryManager, articleManager, userManager, env, mapper)
         {
 
         }

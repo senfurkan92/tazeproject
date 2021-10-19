@@ -15,10 +15,10 @@ namespace DAL.FluentApiMap
         {
             base.Configure(builder);
             builder.ToTable("Articles");
-            builder.Property(x => x.Caption).IsRequired().HasMaxLength(200);
-            builder.Property(x => x.Description).IsRequired().HasMaxLength(400);
-            builder.Property(x => x.Content).IsRequired().HasMaxLength(2000);
-            builder.Property(x => x.ImgPath).IsRequired().HasMaxLength(500);
+            builder.Property(x => x.Caption).IsRequired().HasMaxLength(1000);
+            builder.Property(x => x.Description).IsRequired().HasMaxLength(1000);
+            builder.Property(x => x.Content).IsRequired().HasMaxLength(5000);
+            builder.Property(x => x.ImgPath).IsRequired().HasMaxLength(1000);
 
             // relations
             builder.HasOne(x => x.AppUser).WithMany(x => x.Articles).HasForeignKey(x => x.AppUserId).OnDelete(DeleteBehavior.NoAction);
