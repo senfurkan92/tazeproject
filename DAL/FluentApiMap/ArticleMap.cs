@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace DAL.FluentApiMap
 {
+    /// <summary>
+    /// EntityFramework codefirst ile Articles tablosu konfigurasyonu icin FluentApi yapisi
+    /// </summary>
     public class ArticleMap : BaseMap<Article>
     {
         public override void Configure(EntityTypeBuilder<Article> builder)

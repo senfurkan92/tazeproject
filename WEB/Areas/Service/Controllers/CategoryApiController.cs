@@ -25,6 +25,11 @@ namespace WEB.Areas.Service.Controllers
 
         }
 
+        /// <summary>
+        /// axios ile yeni kategori ekleyebilmek icin restapi
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Insert([FromBody] object data)
         {
@@ -38,6 +43,10 @@ namespace WEB.Areas.Service.Controllers
             return Ok(GetJsonResult(result));
         }
 
+        /// <summary>
+        /// axios ile kategorileri getirmek icin restapi
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -48,6 +57,11 @@ namespace WEB.Areas.Service.Controllers
             return Ok(GetJsonResult(result));
         }
 
+        /// <summary>
+        /// axios ile yazı silmek icin restapi
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

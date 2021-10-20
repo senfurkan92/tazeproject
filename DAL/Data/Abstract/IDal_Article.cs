@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace DAL.Data.Abstract
 {
+    /// <summary>
+    /// Article sinifi icin repository pattern
+    /// </summary>
     public interface IDal_Article : IRepo_Dapper<Article>
     {
     }

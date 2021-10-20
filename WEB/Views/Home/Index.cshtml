@@ -4,19 +4,91 @@
 }
 
 
-<div id="vm" v-cloak>
+
     <div class="container">
         <h2 class="text-center text-dark text-capitalize w-100">
-            Ana Sayfa
+            Proje Hakkında
         </h2>
         <div class="row">
+            <h3>1.	Genel Hususlar</h3>
+            <p>
+                a.	Proje genelinde c# ve javascript dilleri; .net core, vue.js, bootstrap, jquery, axios, dapper yapıları ve MS-Sql veritabanı kullanılmıştır.
+            </p>
+            <p>
+                b.	MS-Sql konfigurasyonu kapsamında “Data Source=.; Initial Catalog=TazeProjectDb; Integrated Security=true;” connection string olarak verilmiştir.
+            </p>
+            <p>
+                c.	CRUD işlemleri dapper ile yapılmış olmasına rağmen MS-Sql tarafında oluşacak veritabanı EntitiyFramework CodeFirst kullanılarak oluşturulmuştur. Aynı zamanda authentication için EntityFramework Identity kullanılmıştır. EntityFramework CodeFirst yaklaşımı çerçevesinde MS-Sql üzerinde veritabanın oluşumu ve ilişkilerin kurulması için sırasıyla aşağıda sunulan işlemler yapılmalıdır.<br />
+                &nbsp;&nbsp;1)	DAL katmanına sağ tıklanarak “set as startup project” seçilmeli,<br />
+                &nbsp;&nbsp;2)	PackageManagerConsole açılmalı,<br />
+                &nbsp;&nbsp;3)	PackageManagerConsole alanında defaultproject olarak DAL katmanı seçilmeli,<br />
+                &nbsp;&nbsp;4)	MS-Sql bilgisayarda kurulu olmalı,<br />
+                &nbsp;&nbsp;5)	.Net 5.0 SDK’sı yüklenmeli,<br />
+                &nbsp;&nbsp;6)	PackageManagerConsole alanına update-database yazılarak enter yapılmalı,<br />
+                &nbsp;&nbsp;7)	İşlemin tamamlanmasını müteakip WEB katmanına sağ tıklanarak “set as startup project” seçilmelidir.
+            </p>
 
+            <h3>2.	.Net Yapısı ve Katmanlı Mimari</h3>
+            <p>
+                a.	Proje 6 katmandan oluşmaktadır.
+            </p>
+            <p>
+                b.	CORE:<br />
+                &nbsp;&nbsp;1)	Data klasörü içinde Repository Pattern yapısına ait sınıflar bulunur.<br />
+                &nbsp;&nbsp;2)	Repository_Dapper sınıfı crud işlemlerinin dapper ile generic olarak yapılabilmesi için oluşturulmuştur.<br />
+                &nbsp;&nbsp;3)	Prevail klasöründe yardımcı sınıflar mevcuttur.
+            </p>
+            <p>
+                c.	DAL:<br />
+                &nbsp;&nbsp;1)	MS-Sql’de oluşacak veritabanının EntityFramework ve EntityFrameworkIdentity yapıları ile konfigure edilebilmesi için gerekli fluentapi sınıfları, EntityFramework dbcontext sınıfı, dapper repository pattern için IDal interface ve Dal sınıfları bulunur. <br />
+                &nbsp;&nbsp;2)	Crud işlemleri için dapper, authentication ve MS-Sql veritabanının konfigurasyonu için EntityFramework CodeFirst yaklaşımı tercih edilmiştir.
+            </p>
+            <p>
+                d.	DOMAIN katmanında EntityFramework CodeFirst yaklaşımına uygun olarak oluşturulmuş entity sınıfları mevcuttur.
+            </p>
+            <p>
+                e.	BLL katmanı bu projede repository pattern için oluştuulmuş fakat ihtiyaç duyulmadığı için yanlızca service interface ve manager sınıflarını bulundurması için kullanılmıştır.
+            </p>
+            <p>
+                f.	DTO katmanında entity sınıfları kapsamında yapılacak işlemlere uygun sınıflar oluşturulmuştur.
+            </p>
+            <p>
+                g.	WEB:<br />
+                &nbsp;&nbsp;1)	.net yapısına uygun olarak hazırlanmıştır. <br />
+                &nbsp;&nbsp;2)	Areas klasörü içinde rest api yapıları mevcuttur.<br />
+                &nbsp;&nbsp;3)	Controllers klasorü içinde MVC yapısına uygun olarak sınıflar Controller sınıfından kalıtılan sınıflar mevcuttur.<br />
+                &nbsp;&nbsp;4)	Extentions klasöründe EntityFrameworkIdentity, AutoMapper ve Cors konfigurasyonları bulunur.<br />
+                &nbsp;&nbsp;5)	View klasöründe IActionResult dönen controller yapılarına ait cshtml dosyaları mevcuttur. Navbar için partialview kullanılmıştır.<br />
+            </p>
+
+            <h3>3.	Projenin İşleyişi</h3>
+            <p>
+                a.	Proje “/Home/Index” yolu üzerinden açılır ve proje özetini içerir.
+            </p>
+            <p>
+                b.	Eğer kullanıcı authentication olmamış ise “/User/SignIn” yoluna yönlendirilir.
+            </p>
+            <p>
+                c.	Eğer kullanıcıya ait user yok ise “SignUp” butonu üzerinden “/User/SignUp” yoluna ulaşarak user oluşturulur. Kullanıcı var veya yeni oluşturulmuş ise “/User/SignIn” yolundan giriş yapılır. Burada EntityFrameworkIdentity yapısına bağlı cookie bazlı authentication yapılır.
+            </p>
+            <p>
+                d.	“/Home/Index” kısaca “/” yolu proje özetini içerir.
+            </p>
+            <p>
+                e.	“/Category/Index” kısaca “/Category” yolu kategorilerin yönetimi içindir.
+            </p>
+            <p>
+                f.	“/Article/Index” kısaca “/Article” yolu yazıların yönetimi içindir.
+            </p>
+            <p>
+                g.	“/Article/Add” yolu yeni yazı eklemek içindir.
+            </p>
+            <p>
+                h.	“/Article/Read” yolu yazının okunması içindir.
+            </p>
+            <p>
+                i.  Proje genelinde View dosyalarına model gönderilmesi yerine verilerin axios ile client tarafında çekilmesi tercih edilmiştir.
+            </p>          
         </div>
     </div>
-</div>
 
-<script>
-    const vm = Vue.createApp({
-
-    }).mount('#vm');
-</script>

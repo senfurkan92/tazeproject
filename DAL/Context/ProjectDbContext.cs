@@ -13,7 +13,7 @@ namespace DAL.Context
 {
     /// <summary>
     /// entity framework yapısı identity kullanilarak cookie bazlı authentication icin kullanilmistir
-    /// ayrica database codefirst yaklasimi ile entity framework kullanılarak yonetilmektedir
+    /// ayrica database codefirst yaklasimi ile entity framework kullanılarak konfigure edilmektedir
     /// </summary>
     public class ProjectDbContext : IdentityDbContext<AppUser, AppRole, string>
     {

@@ -20,7 +20,7 @@ namespace WEB.Controllers
     public class HomeController : Controller
     {
         /// <summary>
-        /// yeni quiz olusturulmasi
+        /// Proje hakkinda genel bilgi
         /// </summary>
         /// <returns></returns>
         public IActionResult Index()

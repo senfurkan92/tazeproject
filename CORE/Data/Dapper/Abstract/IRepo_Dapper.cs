@@ -11,6 +11,10 @@ using System.Transactions;
 
 namespace CORE.Data.Dapper.Abstract
 {
+	/// <summary>
+	/// Temel crud islemleri
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
 	public interface IRepo_Dapper<T>
 		where T : BaseModel
 	{

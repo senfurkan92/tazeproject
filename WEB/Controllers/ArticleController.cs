@@ -17,18 +17,31 @@ namespace WEB.Controllers
             this.articleManager = articleManager;
         }
 
+        /// <summary>
+        /// Tum yazilar
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
+        /// <summary>
+        /// Yeni yazi ekleme
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Add()
         {
             return View();
         }
 
+        /// <summary>
+        /// Yazı okuma
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> Read(int id)
         {

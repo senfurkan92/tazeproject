@@ -8,6 +8,11 @@ namespace CORE.Prevail.Model
 {
 	public static class ExtentionModel
 	{
+		/// <summary>
+		/// olusan hatalarda en dip hatanin bulunmasi
+		/// </summary>
+		/// <param name="ex"></param>
+		/// <returns></returns>
 		public static Exception GetInnestException(this Exception ex)
 		{
 			if (ex.InnerException == null)

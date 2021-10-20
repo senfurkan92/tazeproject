@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace DAL.Data.Concrete
 {
+    /// <summary>
+    /// Article sinifi icin repository pattern
+    /// </summary>
     public class Dal_Article : Repo_Dapper<Article>, IDal_Article
     {
         public Dal_Article(): base(CstrHelper.GetConnectionString())

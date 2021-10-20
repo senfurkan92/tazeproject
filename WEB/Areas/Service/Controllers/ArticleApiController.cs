@@ -29,6 +29,11 @@ namespace WEB.Areas.Service.Controllers
 
         }
 
+        /// <summary>
+        /// axios ile yeni yazı ekleyebilmek icin restapi
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Insert([FromForm] ArticleInsertDto dto)
         {
@@ -55,6 +60,10 @@ namespace WEB.Areas.Service.Controllers
             return Ok(GetJsonResult(result));
         }
 
+        /// <summary>
+        /// axios ile yazilarin getirilebilmesi icin restapi
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -76,6 +85,11 @@ namespace WEB.Areas.Service.Controllers
             return Ok(GetJsonResult(result));
         }
 
+        /// <summary>
+        /// axios ile yazı silebilmek icin restapi
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

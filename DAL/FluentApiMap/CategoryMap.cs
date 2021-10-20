@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace DAL.FluentApiMap
 {
+    /// <summary>
+    /// EntityFramework codefirst ile Categories tablosu konfigurasyonu icin FluentApi yapisi
+    /// </summary>
     public class CategoryMap : BaseMap<Category>
     {
         public override void Configure(EntityTypeBuilder<Category> builder)

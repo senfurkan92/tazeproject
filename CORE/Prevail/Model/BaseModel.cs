@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace CORE.Prevail.Model
 {
+    /// <summary>
+    /// Tum tablolarda olacak temel properties/fields
+    /// </summary>
 	public class BaseModel
 	{
         [Key]

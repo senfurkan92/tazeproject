@@ -9,6 +9,11 @@ using System.Threading.Tasks;
 
 namespace DAL.FluentApiMap
 {
+
+    /// <summary>
+    /// EntityFramework codefirst ile db konfigurasyonu icin FluentApi temel yapisi
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public abstract class BaseMap<T> : IEntityTypeConfiguration<T>
         where T : BaseModel
     {

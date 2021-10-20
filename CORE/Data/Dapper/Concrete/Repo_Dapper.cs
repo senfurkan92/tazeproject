@@ -1,6 +1,5 @@
 ﻿using CORE.Data.Dapper.Abstract;
 using CORE.Data.Dapper.Constant;
-using CORE.Prevail.Constant;
 using CORE.Prevail.Model;
 using Dapper;
 using System;
@@ -12,6 +11,10 @@ using System.Reflection;
 
 namespace CORE.Data.Dapper.Concrete
 {
+	/// <summary>
+	/// Temel crud islemleri
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
 	public class Repo_Dapper<T> : IRepo_Dapper<T>
 		where T : BaseModel, new()
 	{
