@@ -15,7 +15,7 @@
                     <div class="p-3">
                         <label><b>Kategori :</b></label>
                         <select class="form-control" v-model="article.categoryId">
-                            <option v-for="category in categories" v-bind:key="category.Id" v-bind:value="category.Id">
+                            <option v-for="category,index in categories" v-bind:key="category.Id" v-bind:value="category.Id">
                                 {{category.Name}}
                             </option>
                         </select>
@@ -34,13 +34,13 @@
                     </div>
                     <div class="p-3">
                         <label><b>Yazı Posteri :</b></label>
-                        <input id="posterInput" class="form-control" type="file" v-on:change="upload($event)"/>
+                        <input id="posterInput" class="form-control" type="file" v-on:change="upload($event)" accept="image/*"/>
                         <div class="w-100 text-center p-3">
                             <img id="posterImg" class="img-fluid img-thumbnail" />
                         </div>                
                     </div>
                     <div class="p-3 text-end">
-                        <button type="button" class="btn btn-outline-success" style="min-width:200px" v-on:click="save">
+                        <button type="button" class="btn btn-outline-success" style="min-width:200px" v-on:click="save" v-bind:disabled="!readyToSend">
                             Kaydet
                         </button>
                     </div>
@@ -63,7 +63,7 @@
                 },
                 categories: [],
                 article: {
-                    categoryId: '',
+                    categoryId: null,
                     caption: '',
                     description: '',
                     content: '',
@@ -71,13 +71,13 @@
                 }
             }
         },
-        watch: {
-            "article.imgFile"() {
-                console.log(this.article);
-            }
-        },
         created() {
             this.getCategories();
+        },
+        computed: {
+            readyToSend() {
+                return this.article.caption != '' && this.article.description != '' && this.article.content != '' && this.article.imgFile != null && this.categories.length>0;
+            }
         },
         methods: {
             getCategories() {
@@ -85,6 +85,9 @@
                     .then(resp => {
                         if (resp.data.Success) {
                             this.categories = resp.data.Data;
+                            if (this.categories.length > 0) {
+                                this.article.categoryId = this.categories[0].Id;
+                            }
                         } else {
                             Swal.fire(
                                 'Kategorileri Getirme',

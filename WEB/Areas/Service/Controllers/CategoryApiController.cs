@@ -32,9 +32,9 @@ namespace WEB.Areas.Service.Controllers
             var category = new Category()
             {
                 AppUserId = await GetUserId(),
-                Name = dataJson["categoryName"].ToString(),
+                Name = dataJson?["categoryName"]?.ToString(),
             };
-            var result = await Task.Run(() => categoryManager.Insert(category, "Categories"));
+            var result = await Task.Run(() => categoryManager.Insert(category, "Categories"));           
             return Ok(GetJsonResult(result));
         }
 
@@ -57,6 +57,29 @@ namespace WEB.Areas.Service.Controllers
                 IsDeleted = true,
                 IsActive = false
             },"Categories"));
+
+            if (result.Success)
+            {
+                var relatedArticles = await Task.Run(()=> articleManager.Gets(new Article()
+                {
+                    CategoryId = id,
+                    IsDeleted = false
+                },"Articles","Id","asc",0,-1));
+                if (relatedArticles.Success)
+                {
+                    foreach(var article in relatedArticles.Data.ToList())
+                    {
+                        await Task.Run(()=> articleManager.UpdateById(new Article()
+                        {
+                            Id = article.Id,
+                            DeleteDate = DateTime.Now,
+                            IsDeleted = true,
+                            IsActive = false
+                        }, "Articles"));
+                    };
+                }
+            }
+
             return Ok(GetJsonResult(result));
         }
     }
